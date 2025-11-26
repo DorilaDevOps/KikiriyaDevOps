@@ -36,12 +36,14 @@
 		--bg_secondary:#F0E68C; /* Khaki */
 	  --bg_beige:beige;
       --accent:#0ea5a1;
+	  --rojito:#e65434;
       --color_primary:#6b7280;
 	  --color_secundary: #A9A9A9;
 	  --color_tertiary: #0f172a;
 	  --color_celeste:#5e8decbf;
       --bg_gris:#f8fafc;
 	  --bg_green:#25D366;
+	  --border_op:#6c535363;
       --radius:16px;
       --max-width:980px;
       --shadow:0 6px 20px rgb(2 6 23 / 26%);
@@ -57,16 +59,18 @@
 		--overlay: rgba(26, 26, 26, 0.85);
     }
 	 [data-theme="dark"] {
-	 --bg_primary: #2b2828;
-	 --bg_secondary:;
-	 --color_primary:#d2dfde; 
-	 --color_secundary: #A9A9A9;
-	  --color_tertiary: #cfdcfb;
-	 --bg_beige:#40403c61;
-           --gradient-start: #1a1a1a;
+		 --bg_primary: #2b2828;
+		 --bg_secondary:;
+		 --color_primary:#d2dfde; 
+		 --color_secundary: #A9A9A9;
+		  --color_tertiary: #cfdcfb;
+		 --bg_beige:#40403c61;
+          --gradient-start: #1a1a1a;
+	  --rojito:#eb2e04;
 		--gradient-end: #4a4a4a;
-		--bg_gris:#3f4041;
-       }
+		--bg_gris:#3f4041;		
+		--border_op:#1a1a1a;
+      }
 		
     *{box-sizing:border-box}
 	html{
@@ -219,9 +223,9 @@
 	img {
 	max-width: 100%;height: auto;
 }
-	li{list-style: none;margin-left: -20px;}
- a {text-decoration: none;color: inherit;}
- a:hover{color:#040404;}
+	li{list-style: none;}
+	 a {text-decoration: none;color: inherit;}
+	 a:hover{color:#040404;}
     p.lead{margin:12px 0 0;color:var(--color_primary);font-size:clamp(14px,2.2vw,16px)}
 
     .features{display:flex;flex-direction:column;gap:10px;margin-top:18px}
@@ -236,22 +240,22 @@
 	}
     .hero-foot{
 		display:grid;
-		grid-template-columns:2fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap:2px;
 		align-items:start;
-		padding:2em 1em;
+		padding:1em;
 		background-color:var(--bg_beige);
+		border-radius:2rem;
+		margin-top:1rem;
 	}
-	.aside{
-		padding: 1em .5em;
-		line-height: 1.2;
-	}
-	
+		
 	.contact_wrap{
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		align-items: center;
+	}
+	.contact_wrap > h3{
+		padding-left: 30%;
 	}
 	 
 	
@@ -263,15 +267,13 @@
 		    align-items: flex-start;
 	}
 	
-    .btn.ghost{background:transparent;border:1px solid #e6eef0;color:var(--color_tertiary);box-shadow:none}
-.theme-toggle {
+	.theme-toggle {
             background: transparent;
             border: none;
-            color: var(--color_tertiary);
             padding: 0.5rem;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 1.8em;
+            font-size: 1.5em;
             width: 40px;
             height: 40px;
             display: flex;
@@ -281,14 +283,30 @@
         }
 
         .theme-toggle:hover {
-            background: var(--accent);
-            transform: scale(1.1);
+            transform: scale(1.3)rotate(-25deg);
+			transform-origin: bottom left; 
         }
 
 	
     .grid{display:grid;grid-template-columns:1fr;gap:12px;color:var(--color_tertiary);}
+	
+	.queIncluye > ul > li{
+		display:flex;
+		align-items: center;
+		gap:.5rem;
+		color:var(--color_primary);
+		padding-left: 0em;
+		text-indent: -2em;
+	}
+	.queIncluye{position:relative;}
+	.garantia{
+		color:var(--rojito);position:absolute;bottom:0;right:0; text-transform:uppercase;
+		z-index:1;transform:rotate(-40deg);border:1px solid var(--border_op);
+		letter-spacing:.3rem;
+	}
+	.raya{display:block;width:.5rem; height:.5rem;background-color:var(--accent); border-radius:50%;}
 
-    .lang-toggle{display:inline-flex;border-radius:2rem;border:1px solid var(--color_secundary);padding:6px}
+    .lang-toggle{display:inline-flex;border-radius:2rem;border:1px solid var(--color_secundary);padding:6px;}
    
 	.lang-toggle button {
 		background: transparent;
@@ -296,7 +314,10 @@
 		border-radius: 2rem;
 		cursor: pointer;
 		font-weight: 500;
+		border:1px solid transparent;
 	}
+	.lang-toggle button:hover{background-color:var(--bg_beige);}
+	
     .lang-toggle button.active{border:1px solid var(--color_secundary);box-shadow:var(--shadow)}
 
     footer{
@@ -314,14 +335,13 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-around;
 		width: 20rem;
 		max-width: 50%;
 	}
 	
     #clock{font-weight:600;color:var(--accent)}
 	
-/* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 10rem;
@@ -381,25 +401,34 @@
 			gap:2em;
 		}
 		
+		.contact_wrap{align-items: center;}
+		.contact_wrap > h3{padding-left: 0;	}
+		.contact_wrap .contact_my {font-size: 1.1em;letter-spacing:.2rem;}
+		.contact_wrap .contact_my span{font-size:1.2em;}
+		
 	}
     @media(min-width:900px){
       .hero{grid-template-columns:1fr}
-	  .hero-foot{padding: 1em;}
+	  .hero-foot{padding: 2em 1em;}
 	   .aside{display:grid; grid-template-columns: 1fr; padding: 1.5em .5em; line-height:1.4;}
 	  .whatsapp-float{
-		bottom: 130px;right: 220px;width: 80px;
-			height: 80px;
+		bottom:60px;
+		right:60px;
+		width: 80px;
+		height: 80px;
 		}
 		.hero{
 			gap:3em;
 		}
 		.brand{justify-content: space-around;font-size: 2em;}
+		.grid{gap: 3rem;}
+		.garantia{right:1rem;letter-spacing:.6rem;bottom: 1rem;padding:.5rem;}
 	
     }
 	@media(min-width:1200px){
 	    .whatsapp-float {
-			bottom: 230px;
-			right: 320px;
+			bottom: 30px;
+			right: 20px;
 			width: 120px;
 			height: 120px;
 		}
@@ -418,7 +447,7 @@
 </head>
 <body>
   <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
+	<section class="hero" aria-labelledby="hero-title">
         <div class="brand">
 			  <div class="brand_logo">
 				  <div class="logo"><img src="https://img.icons8.com/?size=100&id=cbBwGOQecGkx&format=png&color=000000"/></div>
@@ -438,12 +467,12 @@
 			<div class="subtitle" data-es>
 				<p>En Kikiriya DevOps creemos en el diseño con propósito: sitios web simples, accesibles y visualmente limpios que priorizan la experiencia humana.</p>
 				<p>Cada proyecto es pensado desde la accesibilidad y la usabilidad. Interfaz moderna que inspira confianza.</p>
-				<p>Combinamos diseño y tecnología moderna para ofrecer sitios web minimalistas, elegantes y funcionales, que se adaptan con fluidez a cada pantalla.</p>
+				<p>Combinamos diseño y tecnología moderna para ofrecer sitios web, elegantes y funcionales, que se adaptan con fluidez a cada pantalla.</p>
 			</div>
 			<div class="subtitle" data-en style="display:none">
 				<p>At Kikiriya DevOps we believe in design with purpose: simple, accessible and visually clean websites that prioritize the human experience.</p>
 				<p>Each project is thought about accessibility and usability. Modern interface that inspires confidence.</p>
-				<p>We combine design and modern technology to deliver minimalist, elegant and functional websites that adapt fluidly to every screen.</p>
+				<p>We combine design and modern technology to deliver, elegant and functional websites that adapt fluidly to every screen.</p>
 			</div>
 			
 			<h4 class="lead" data-es><strong>Productos pensados para convertir visitantes en clientes y acompañar el crecimiento de tu empresa.</strong></h4>
@@ -470,86 +499,94 @@
 
       <aside class="aside">
         <div class="grid">
-		<div >
-          <div data-es>
-				<strong>¿Por qué elegir este servicio?</strong>
-				<p style="margin:8px 0 0;color:var(--color_primary)">Comunicación fluida y transparente, con resultados visibles en poco tiempo.</p>
-				<p style="margin:8px 0 0;color:var(--color_primary)">Acompañamos cada proyecto con seguimiento, mejoras y ajustes continuos junto a vos.
-				<p style="margin:8px 0 0;color:var(--color_primary)">El objetivo: un sitio rentable, fácil de mantener y que comunique tu propuesta de valor con claridad.</p>
-				<p style="margin:8px 0 0;color:var(--color_primary)"><span style="font-weight:600">Presupuesto justo. </span>
-					El presupuesto inicial cubre un producto mejorado con ajustes posteriores según conveniencia del cliente.</p>
+			<div >
+			  <div data-es>
+					<strong>¿Por qué elegir este servicio?</strong>
+					<p style="margin:8px 0 0;color:var(--color_primary)">Comunicación fluida y transparente, con resultados visibles en poco tiempo.</p>
+					<p style="margin:8px 0 0;color:var(--color_primary)">Acompañamos cada proyecto con seguimiento, mejoras y ajustes continuos junto a vos.
+					<p style="margin:8px 0 0;color:var(--color_primary)">El objetivo: un sitio rentable, fácil de mantener y que comunique tu propuesta de valor con claridad.</p>
+					<p style="margin:8px 0 0;color:var(--color_primary)"><span style="font-weight:600">Presupuesto justo. </span>
+						El presupuesto inicial cubre un producto mejorado con ajustes posteriores según conveniencia del cliente.</p>
+				</div>
+				<div data-en style="display:none">			
+					<strong>Why choose this service?</strong>
+					<p style="margin:8px 0 0;color:var(--color_primary)">Fluid and transparent communication, with visible results in a short time.</p>
+					<p style="margin:8px 0 0;color:var(--color_primary)">We accompany each project with continuous monitoring, improvements and adjustments together with you.</p>
+					<p style="margin:8px 0 0;color:var(--color_primary)">The goal: a profitable site that is easy to maintain and communicates your value proposition clearly.</p>
+					<p style="margin:8px 0 0;color:var(--color_primary)"><span style="font-weight:600">Fair pricing</span>
+						The initial quote covers an improved product with subsequent adjustments based on customer convenience.</p>
+				</div>
 			</div>
-			<div data-en style="display:none">			
-				<strong>Why choose this service?</strong>
-				<p style="margin:8px 0 0;color:var(--color_primary)">Fluid and transparent communication, with visible results in a short time.</p>
-				<p style="margin:8px 0 0;color:var(--color_primary)">We accompany each project with continuous monitoring, improvements and adjustments together with you.</p>
-				<p style="margin:8px 0 0;color:var(--color_primary)">The goal: a profitable site that is easy to maintain and communicates your value proposition clearly.</p>
-				<p style="margin:8px 0 0;color:var(--color_primary)"><span style="font-weight:600">Fair pricing</span>
-					The initial quote covers an improved product with subsequent adjustments based on customer convenience.</p>
-			</div>
-		</div>
 		  
-         <div>
-            <strong data-es>Qué incluye</strong>
-            <ul data-es style="margin:8px 0 0;color:var(--color_primary);padding-left:18px">
-              <li>Diseño minimalista UX y UX enfocado.</li>
-              <li>Optimización para posicionamiento y velocidad en buscadores (SEO).</li>
-              <li>Entrega continua en el desarrollo y pruebas de funcionamiento (Agile software).</li>
-            </ul>
+			 <div class="queIncluye">
+				<div class="garantia">Garantía</div>
+				<strong data-es>Qué incluye</strong>
+				<ul data-es >
+				  <li>  1 año Hosting incluido</li>
+				  <li>  Registro Dominio web</li>
+				  <li>  Certificacion de Seguridad (SSL)</li>
+				  <li> Boton de WhatsApp </li>
+				  <li>  Enlaces directos a Redes Sociales</li>
+				  <li>   Sitio 100% personalizado</li>
+				  <li>  Diseño minimalista UX y UX enfocado.</li>
+				  <li>   Optimización para posicionamiento y velocidad en buscadores (SEO).</li>
+				  <li>   Entrega continua en el desarrollo y pruebas de funcionamiento (Agile software).</li>
+				  <li>  Soporte tecnico garantizado</li>
+				</ul>
 
-            <strong data-en style="display:none">What&apos;s included</strong>
-            <ul data-en style="display:none;margin:8px 0 0;color:var(--color_primary);padding-left:18px">
-              <li>Minimal design UX and UX focus.</li>
-              <li>Optimization for positioning and speed in search engines (SEO).</li>
-              <li>Continuous delivery in development and functional testing (Agile software)</li>
-            </ul>
-          </div>
-		  
-         <div>
-            <strong data-es>Notas</strong>
-			<p data-es style="margin:8px 0 0;color:var(--color_primary)">	Mantenimiento opcional. </p>
-            <p data-es style="margin:8px 0 0;color:var(--color_primary)">El cliente puede gestionar dominio y hosting. </p>
-			<p data-es style="margin:8px 0 0;color:var(--color_primary)">	Fomentamos una comunicación fluida y flexible para asegurar que tu visión se traduzca en un sitio web que impulse tanto tu crecimiento como el nuestro.</p>
+				<strong data-en style="display:none">What&apos;s included</strong>
+				<ul data-en style="display:none;margin:8px 0 0;color:var(--color_primary);padding-left:18px">
+				  <li>Minimal design UX and UX focus.</li>
+				  <li>Optimization for positioning and speed in search engines (SEO).</li>
+				  <li>Continuous delivery in development and functional testing (Agile software)</li>
+				</ul>
+			  </div>
+			  
+			 <div class="notas">
+				<strong data-es>Notas</strong>
+				<p data-es style="margin:8px 0 0;color:var(--color_primary)">	Mantenimiento opcional. </p>
+				<p data-es style="margin:8px 0 0;color:var(--color_primary)">El cliente puede gestionar dominio y hosting. </p>
+				<p data-es style="margin:8px 0 0;color:var(--color_primary)">	Fomentamos una comunicación fluida y flexible para asegurar que tu visión se traduzca en un sitio web que impulse tanto tu crecimiento como el nuestro.</p>
 
-            <strong data-en style="display:none">Notes</strong>
-			<p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">	Optional maintenance. </p>
-            <p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">The client can manage domain and hosting. </p>
-			<p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">	We encourage fluid and flexible communication to ensure that your vision is translated into a website that drives both your growth and ours.</p>		  
-		  </div>
-		  
+				<strong data-en style="display:none">Notes</strong>
+				<p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">	Optional maintenance. </p>
+				<p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">The client can manage domain and hosting. </p>
+				<p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">	We encourage fluid and flexible communication to ensure that your vision is translated into a website that drives both your growth and ours.</p>		  
+			  </div>		  
         </div>
       </aside>
-    </section>
+     </section>
 	
         <div class="hero-foot" >
 			<div class="contact_wrap">				
 				  <h3>Contactar</h3>
 				  <div class="contact_my" >
-					<div><strong>☎️ - </strong> 
+					<div><span>☎️ - </span> 
 						<a href="tel:+598094872605" class="" target="_blank" rel="noopener" aria-label="Contactar por telefono fijo">094872605</a>
 					</div>		
-					<div><strong>🎯 - </strong> Prado, Montevideo, Uruguay</div>
+					<div><span>🎯 - </span> Prado, Montevideo, Uruguay</div>
 					<div style="display:flex; flex-wrap:nowrap;"><span>📩 </span> -  kikiriyadevops@gmail.com</div>	
 					
 				  </div>    
 				
 			  </div > 
 		
-			<a href="https://wa.me/598094872605?text=Hola%2C%20%20Kikiriya%20DevOp" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-			   📞
-			</a>
 		</div>
-			
+		
+		
   </main>
-
+<a href="https://wa.me/598094872605?text=Hola%2C%20%20Kikiriya%20DevOp" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+			📞
+		</a>
+			
   <footer>
 		<div>
-			© <span id="year"></span> Kikiriya DevOps — Todos los derechos reservados.<br>
-			Hecho con 💚<br>
+			© <span id="year"></span> Kikiriya DevOps — Todos los derechos reservados.
 		</div>
 		<div class="foot_theme">
 			<div><p>Última actualización: <span id="clock"></span>	</p></div>
-			<div><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+			<div>
+				<button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
 					<span id="themeIcon">🌙</span>				
 				</button>
 			</div>
