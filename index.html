@@ -231,7 +231,7 @@
     .features{display:flex;flex-direction:column;gap:10px;margin-top:18px}
     .feature{display:flex;gap:12px;align-items:flex-start}
     .dot{min-width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
-    .feature p{margin:0;color:var(--color_primary);font-size:14px}
+    .feature p{margin:0;color:var(--color_primary);}
 
 	.description_site{    
 		display: flex;
@@ -298,9 +298,10 @@
 		padding-left: 0em;
 		text-indent: -2em;
 	}
-	.queIncluye{position:relative;}
+	.queIncluye{position:relative;line-height:1.6;}
 	.garantia{
-		color:var(--rojito);position:absolute;bottom:0;right:0; text-transform:uppercase;
+		color:var(--rojito);position:absolute;
+		bottom: 10px; right: -20px; text-transform:uppercase;
 		z-index:1;transform:rotate(-40deg);border:1px solid var(--border_op);
 		letter-spacing:.3rem;
 	}
@@ -405,6 +406,7 @@
 		.contact_wrap > h3{padding-left: 0;	}
 		.contact_wrap .contact_my {font-size: 1.1em;letter-spacing:.2rem;}
 		.contact_wrap .contact_my span{font-size:1.2em;}
+		.garantia{bottom:0px;right:0px;letter-spacing:.4rem;padding:.3rem;}
 		
 	}
     @media(min-width:900px){
@@ -522,23 +524,30 @@
 				<div class="garantia">Garantía</div>
 				<strong data-es>Qué incluye</strong>
 				<ul data-es >
-				  <li>  1 año Hosting incluido</li>
-				  <li>  Registro Dominio web</li>
-				  <li>  Certificacion de Seguridad (SSL)</li>
-				  <li> Boton de WhatsApp </li>
-				  <li>  Enlaces directos a Redes Sociales</li>
-				  <li>   Sitio 100% personalizado</li>
-				  <li>  Diseño minimalista UX y UX enfocado.</li>
-				  <li>   Optimización para posicionamiento y velocidad en buscadores (SEO).</li>
-				  <li>   Entrega continua en el desarrollo y pruebas de funcionamiento (Agile software).</li>
-				  <li>  Soporte tecnico garantizado</li>
+				  <li>1 año Hosting incluido</li>
+				  <li>Registro Dominio web</li>
+				  <li>Certificacion de Seguridad (SSL)</li>
+				  <li>Boton de WhatsApp </li>
+				  <li>Enlaces directos a Redes Sociales</li>
+				  <li>Sitio 100% personalizado</li>
+				  <li>Diseño minimalista UX y UX enfocado</li>
+				  <li>Optimización para posicionamiento y velocidad en buscadores (SEO)</li>
+				  <li>Entrega continua en el desarrollo y pruebas de funcionamiento (Agile software)</li>
+				  <li>Soporte tecnico garantizado</li>
 				</ul>
 
 				<strong data-en style="display:none">What&apos;s included</strong>
-				<ul data-en style="display:none;margin:8px 0 0;color:var(--color_primary);padding-left:18px">
-				  <li>Minimal design UX and UX focus.</li>
-				  <li>Optimization for positioning and speed in search engines (SEO).</li>
-				  <li>Continuous delivery in development and functional testing (Agile software)</li>
+				<ul data-en style="display:none;">				  
+					<li>1 year Hosting included</li>
+					<li>Web domain registration</li>
+					<li>Security Certification (SSL)</li>
+					<li>WhatsApp button</li>
+					<li>Direct links to Social Networks</li>
+					<li>100% personalized site</li>
+					<li>Minimalist UX design and focused UX</li>
+					<li>Optimization for positioning and speed in search engines (SEO)</li>
+					<li>Continuous delivery in development and operational testing (Agile software)</li>
+					<li>Guaranteed technical support</li>
 				</ul>
 			  </div>
 			  
