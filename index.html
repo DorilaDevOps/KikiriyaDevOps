@@ -34,7 +34,7 @@
     :root{
       --bg_primary:#dadada00;
 		--bg_secondary:#F0E68C; /* Khaki */
-	  --bg_beige:beige;
+	  --bg_beige:#f5f5dc8a;
       --accent:#0ea5a1;
 	  --rojito:#e65434;
       --color_primary:#6b7280;
@@ -681,13 +681,20 @@
     // Footer clock
     const clock=document.getElementById('clock');
     const year=document.getElementById('year');
-    year.textContent=new Date().getFullYear();
+	const hoy = new Date();
+	const dia = hoy.getDate(); // Día del mes (1-31)
+	const mes = hoy.getMonth() + 1; // Mes (0-11, sumamos 1)
+	const año = hoy.getFullYear(); 
+    year.textContent = año;
+	  
     function updateClock(){
       const now=new Date();
-      const time=now.toLocaleTimeString('es-UY',{hour12:false});
-      clock.textContent=time;
+      const time = now.toLocaleTimeString('es-UY',{hour12:false});
+      clock.textContent = `${dia-2} / ${mes} - ${time}`;
     }
+	  
     setInterval(updateClock,1000);
+	  
     updateClock();
 	
 	document.addEventListener('DOMContentLoaded', () => {
