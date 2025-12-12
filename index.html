@@ -179,7 +179,7 @@
 		background-size: cover;
 		background-attachment: fixed;
 		background-position: bottom;
-		width: 100%;
+		width: 100px;
 	}
 	
 	.brand_title{display: flex;
@@ -197,7 +197,7 @@
 	}
 	
 
-    h1{margin:0;font-size:1.8em;}
+    h1{margin:0;font-size:1.7em;}
 	h2{font-family:var(--font_family_playflare);font-size:1em;}
 	h3{    
 		font-family: var(--font_family_poppins);
@@ -388,6 +388,9 @@
 		
 		
 	@media(min-width:790px){
+		brand_logo {
+		    gap: 2rem;
+		}
 		.brand{padding: 18px;}
 		.brand_title{
 			gap: 1rem; 
@@ -401,6 +404,7 @@
 		.hero{
 			gap:2em;
 		}
+		.logo img{width: 130px;}
 		
 		.contact_wrap{align-items: center;}
 		.contact_wrap > h3{padding-left: 0;	}
