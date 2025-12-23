@@ -37,6 +37,7 @@
 	  --bg_beige:#f5f5dc8a;
       --accent:#0ea5a1;
 	  --rojito:#e65434;
+	  --bg_canarito:#ffeb3b80;
       --color_primary:#6b7280;
 	  --color_secundary: #A9A9A9;
 	  --color_tertiary: #0f172a;
@@ -125,17 +126,17 @@
 		line-height: 1.5;
 	}
 
-    .brand{
-		display:flex;
+    .brand {
+		display: flex;
 		flex-wrap: wrap;
-		gap:14px;
-		align-items:center;
-		justify-content: center;
-		background:var(--bg_gris);
-		padding:0px;
-		border-radius:12px;
-		border:1px solid rgba(2,6,23,0.03);
-		position:relative;
+		flex-direction: column;
+		gap: 1rem;
+		justify-content: space-around;
+		background: var(--gradient-end);
+		padding: 0px;
+		border-radius: 12px;
+		border: 1px solid rgba(2, 6, 23, 0.03);
+		position: relative;
 		overflow: hidden;
 		transition: var(--transition);
 	}
@@ -155,50 +156,56 @@
 	.brand_logo{    
 		display: flex;
 		gap: 1rem;
-		align-items: flex-start;
-	    padding-left: 20px;
+		padding: .5rem 1rem;
+		justify-content: space-around;
 	}
 	
-	.description_site{font-size:1em;}
+	.description_site{ font-size: clamp(1em, 3vw, 1.8em);}
+	
     .logo{	
 		border-radius:12px;
 		background:linear-gradient(135deg,var(--accent),var(--color_celeste));
 		display:flex;
 		align-items:center;
 		justify-content:center;
-		color:white;font-weight:700;
-		font-size:20px;	
+		color:white;
+		height:70px;
 		border: 1px solid #666;
 		-webkit-transform: skew(-25deg);
 		-moz-transform: skew(-25deg);
 		-o-transform: skew(-25deg);
 		-ms-transform: skew(-25deg);
 		transform: skew(-25deg);
+		transition:all .4s ease-in-out;
 	}
 	.logo img{ 
 		background-size: cover;
 		background-attachment: fixed;
 		background-position: bottom;
-		width: 100px;
+		width: 4rem;
 	}
 	
-	.brand_title{display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-	align-items: center;
-	gap: .5em;
-	}
-	
-	.lang-toggle{    
-		margin-left:8px
-		display: flex;
-		gap: 8px;
+	.brand_title{
+	    display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-around;
 		align-items: center;
+		gap: .5em;
+		flex-direction: column;
+		& h1{
+			font-size: clamp(1.3em, 6vw, 2.5em);
+			letter-spacing: 2px;
+		}
 	}
 	
-
+	.brand_title > div > i {
+		 font-size: clamp(1.3em, 3vw, 1.5em);
+		}
+	
     h1{margin:0;font-size:1.7em;}
+	
 	h2{font-family:var(--font_family_playflare);font-size:1em;}
+	
 	h3{    
 		font-family: var(--font_family_poppins);
 		white-space: nowrap;
@@ -210,6 +217,7 @@
 		font-weight: 500;
 		line-height: 1.2;
 	}
+	
 	h3::after{
 		content:'';
 		position:absolute;
@@ -220,12 +228,17 @@
 		background:var(--txt_hover);
 		transition:all .3s ease;
 	}
+	
 	img {
-	max-width: 100%;height: auto;
-}
+		max-width: 100%;height: auto;
+	}
+	
 	li{list-style: none;}
+	
 	 a {text-decoration: none;color: inherit;}
+	 
 	 a:hover{color:#040404;}
+	 
     p.lead{margin:12px 0 0;color:var(--color_primary);font-size:clamp(14px,2.2vw,16px)}
 
     .features{display:flex;flex-direction:column;gap:10px;margin-top:18px}
@@ -288,7 +301,14 @@
         }
 
 	
-    .grid{display:grid;grid-template-columns:1fr;gap:12px;color:var(--color_tertiary);}
+    .grid{
+		display:grid;
+		grid-template-columns:1fr;
+		gap:1rem;
+		<!-- padding-left: 2em; -->
+		<!-- text-indent: -2em; -->
+		<!-- color:var(--color_tertiary); -->
+	}
 	
 	.queIncluye > ul > li{
 		display:flex;
@@ -299,6 +319,7 @@
 		text-indent: -2em;
 	}
 	.queIncluye{position:relative;line-height:1.6;}
+	
 	.garantia{
 		color:var(--rojito);position:absolute;
 		bottom: 10px; right: -20px; text-transform:uppercase;
@@ -307,8 +328,18 @@
 	}
 	.raya{display:block;width:.5rem; height:.5rem;background-color:var(--accent); border-radius:50%;}
 
-    .lang-toggle{display:inline-flex;border-radius:2rem;border:1px solid var(--color_secundary);padding:6px;}
-   
+	.lang-toggle{    
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 8px;
+		border-radius: 2rem;
+		border: 1px solid var(--color_secundary);
+		padding: 6px;
+		max-width: fit-content;
+		margin-left: auto;
+	}
+
 	.lang-toggle button {
 		background: transparent;
 		padding: 3px 4px;
@@ -317,9 +348,12 @@
 		font-weight: 500;
 		border:1px solid transparent;
 	}
-	.lang-toggle button:hover{background-color:var(--bg_beige);}
+	.lang-toggle button:hover{background-color:var(--bg_canarito);}
 	
-    .lang-toggle button.active{border:1px solid var(--color_secundary);box-shadow:var(--shadow)}
+    .lang-toggle button.active{
+		border:1px solid var(--color_secundary);
+		box-shadow:var(--shadow)
+	}
 
     footer{
 		display: flex;
@@ -394,17 +428,23 @@
 		.brand{padding: 18px;}
 		.brand_title{
 			gap: 1rem; 
-			font-size: 1.1em;
-			flex-direction: column;
-			align-items: center;
 		}
-		 h1{font-size:2.5em;}
+		
+		
 		h2{font-size:1.5em;}
-		.aside{line-height:1.3;}
+		
+		.aside{line-height:1.3; font-size: clamp(1em, 4vw, 1.7em);}
+		
 		.hero{
 			gap:2em;
 		}
-		.logo img{width: 130px;}
+		
+		.logo{ height: 150px;}
+		
+		.logo img{
+			width: 130px; 
+			max-height:100px;
+		}
 		
 		.contact_wrap{align-items: center;}
 		.contact_wrap > h3{padding-left: 0;	}
@@ -461,8 +501,8 @@
 				  
 			  </div>		  
 			  <div class="lang-toggle" role="tablist" aria-label="Cambiar idioma">
-					<small data-es style="color:var(--color_primary);font-size:13px">Sitios Minimalistas · <br>  Alta Performance</small>
-					<small data-en style="display:none; color:var(--color_primary);font-size:13px"> Minimalist Sities · <br>  hight Performance</small>
+					<!-- <small data-es style="color:var(--color_primary);font-size:13px">Sitios Minimalistas · <br>  Alta Performance</small> -->
+					<!-- <small data-en style="display:none; color:var(--color_primary);font-size:13px"> Minimalist Sities · <br>  hight Performance</small> -->
 					<button id="btn-es" class="active" aria-selected="true">ES</button>
 					<button id="btn-en" aria-selected="false">EN</button>
 			  </div>
@@ -528,7 +568,7 @@
 				<div class="garantia">Garantía</div>
 				<strong data-es>Qué incluye</strong>
 				<ul data-es >
-				  <li>1 año Hosting incluido</li>
+				  <li>Un año de Hosting</li>
 				  <li>Registro Dominio web</li>
 				  <li>Certificacion de Seguridad (SSL)</li>
 				  <li>Boton de WhatsApp </li>
@@ -542,7 +582,7 @@
 
 				<strong data-en style="display:none">What&apos;s included</strong>
 				<ul data-en style="display:none;">				  
-					<li>1 year Hosting included</li>
+					<li>One year Hosting</li>
 					<li>Web domain registration</li>
 					<li>Security Certification (SSL)</li>
 					<li>WhatsApp button</li>
