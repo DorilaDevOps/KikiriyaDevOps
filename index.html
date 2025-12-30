@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Kikiriya DevOps — Diseño y desarrollo de sitios web minimalistas, modernos y optimizados para SEO. Software de calidad en accesibilid y usabilidad.Servicios con seguimiento y mejoras continuas.">
-   <meta name="keywords" content="lentes segunda mano, gafas originales Montevideo, lentes de marca Uruguay, lentes sustentables, second hand eyewear, restauración lentes, gafas usadas originales, vitra montevideo">
-    <meta name="author" content="Kikiriya devOps">
+  <meta name="description" content="Kikiriya DevOps — ofrece desarrollo de software y diseño web con enfoque en accesibilidad, usabilidad, estética minimalista, modernos y de calidad y optimizados, para convertir visitantes en clientes. Servicios con seguimiento y mejoras continuas.">
+   <meta name="keywords" content="desarrollo software, diseño web, accesibilidad web, usabilidad, diseño minimalista, UX/UI, hosting, SEO, Montevideo, Uruguay">
+    <meta name="author" content="Kikiriya DevOps">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Spanish">
     <meta name="geo.region" content="UY-MO">
@@ -14,18 +14,21 @@
 	<link rel="shortcut icon" href="logoKiki-min.png" type="image/jpg">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kikiriya DevOps | Desarrollo de Software | Accesibilidad Usabilidad | uy">
-    <meta property="og:description" content="Kikiriya DevOps — Diseño y desarrollo de sitios web minimalistas, modernos y optimizados para SEO. Software de calidad en accesibilid y usabilidad. Servicios con seguimiento y mejoras continuas.">
+    <meta property="og:title" content="Kikiriya DevOps |Desarrollo de Software y Diseño Web |Accesibilidad Usabilidad Posisionamiento| uy">
+    <meta property="og:description" content="Servicios profesionales de desarrollo y diseño web de calidad, accesible y minimalista, modernos y optimizados para SEO.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_UY">
+	<meta property="og:url" content="https://kikiriya-software.netlify.app/">
+	<meta property="og:image" content="logoKiki-min.png">
     
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Kikiriya DevOps — Diseño y desarrollo de sitios web minimalistas, modernos y optimizados para SEO. Software de calidad en accesibilid y usabilidad. Servicios con seguimiento y mejoras continuas.">
+    <meta name="twitter:card" content="logoKiki.png">
+    <meta name="twitter:title" content="Kikiriya DevOps | Desarrollo de Software y Diseño Web | Accesibilidad Usabilidad Posisionamiento| uy">
+    <meta name="twitter:description" content="Servicios profesionales de desarrollo y diseño web de calidad, accesible y minimalista, modernos y optimizados para SEO.">
+	<meta name="twitter:image" content="logoKiki-min.png">
     
   
-  <title>Kikiriya DevOps | Desarrollo de Software | Accesibilidad Usabilidad</title>
+  <title>Kikiriya DevOps |Desarrollo de Software y Diseño Web |Accesibilidad Usabilidad Posisionamiento</title>
   	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -37,11 +40,11 @@
 	  --bg_beige:#f5f5dc8a;
       --accent:#0ea5a1;
 	  --rojito:#e65434;
-	  --bg_canarito:#ffeb3b80;
+	  --bg_canarito:#ffeb3be0;
       --color_primary:#6b7280;
 	  --color_secundary: #A9A9A9;
 	  --color_tertiary: #0f172a;
-	  --color_celeste:#5e8decbf;
+	  --color_celeste:#3a5f9e;
       --bg_gris:#f8fafc;
 	  --bg_green:#25D366;
 	  --border_op:#6c535363;
@@ -68,7 +71,8 @@
 		 --bg_beige:#40403c61;
           --gradient-start: #1a1a1a;
 	  --rojito:#eb2e04;
-		--gradient-end: #4a4a4a;
+		--gradient-end: #4a4a4a;		
+	  --color_celeste:#5e8decbf;
 		--bg_gris:#3f4041;		
 		--border_op:#1a1a1a;
       }
@@ -87,14 +91,14 @@
 		flex-direction:column;
 		min-height:100vh;
 	}
-    .container{
+    .main{
 		width:100%;
 		max-width:var(--max-width);
 		margin:auto;
 		flex:1;
 		background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
 	}
-	container::brefore{
+	main::brefore{
 		content: '';
 		position: absolute;
 		top: 0;
@@ -296,10 +300,12 @@
         }
 
         .theme-toggle:hover {
-            transform: scale(1.3)rotate(-25deg);
+            transform: scale(1.3)rotate(-15deg);
 			transform-origin: bottom left; 
-        }
-
+        }		
+	.skip_link_inicio{transition: all 0.3s ease;}
+	.skip_link_inicio:hover{transform:scale(1.2); box-shadow:0px .2rem .5rem .1px var(--overlay);}
+	.btns_config{display:flex; align-items: center; gap:.5rem;}
 	
     .grid{
 		display:grid;
@@ -348,7 +354,7 @@
 		font-weight: 500;
 		border:1px solid transparent;
 	}
-	.lang-toggle button:hover{background-color:var(--bg_canarito);}
+	.lang-toggle button:hover{background-color:var(--bg_green);}
 	
     .lang-toggle button.active{
 		border:1px solid var(--color_secundary);
@@ -377,7 +383,7 @@
 	
     #clock{font-weight:600;color:var(--accent)}
 	
-        .whatsapp-float {
+        .whatsapp_float {
             position: fixed;
             bottom: 10rem;
             right: 1rem;
@@ -397,17 +403,28 @@
             z-index: 2;
             text-decoration: none;
         }
-
-        .whatsapp-float:hover {
+		
+		
+		a:focus-visible, button:focus-visible {
+		  outline: 3px dashed red;
+		  outline-offset: 2px; /* Separa el contorno del elemento */
+		}
+		
+		.whatsapp_float:focus-visible {
+		  outline: 3px dashed red;
+		  outline-offset: 2px; /* Separa el contorno del elemento */
+		}
+		
+        .whatsapp_float:hover {
             transform: scale(1.1) translateY(-3px);
             box-shadow: var(--shadow_green);
 			background: var(--accent);
         }
-		.whatsapp-float:hover::before {
+		.whatsapp_float:hover::before {
 			width: 100%;
             height: 100%;
 	}
-	.whatsapp-float::before {
+	.whatsapp_float::before {
 		content: '';
 		position: absolute;
 		top: 50%;
@@ -433,7 +450,7 @@
 		
 		h2{font-size:1.5em;}
 		
-		.aside{line-height:1.3; font-size: clamp(1em, 4vw, 1.7em);}
+		.section_service{line-height:1.3; font-size: clamp(1em, 4vw, 1.7em);}
 		
 		.hero{
 			gap:2em;
@@ -456,8 +473,8 @@
     @media(min-width:900px){
       .hero{grid-template-columns:1fr}
 	  .hero-foot{padding: 2em 1em;}
-	   .aside{display:grid; grid-template-columns: 1fr; padding: 1.5em .5em; line-height:1.4;}
-	  .whatsapp-float{
+	   .section_service{display:grid; grid-template-columns: 1fr; padding: 1.5em .5em; line-height:1.4;}
+	  .whatsapp_float{
 		bottom:60px;
 		right:60px;
 		width: 80px;
@@ -472,7 +489,7 @@
 	
     }
 	@media(min-width:1200px){
-	    .whatsapp-float {
+	    .whatsapp_float {
 			bottom: 30px;
 			right: 20px;
 			width: 120px;
@@ -492,21 +509,21 @@
   </style>
 </head>
 <body>
-  <main class="container">
-	<section class="hero" aria-labelledby="hero-title">
-        <div class="brand">
+  <main class="main" id="main-content">
+	<section class="hero">
+        <header class="brand">
 			  <div class="brand_logo">
-				  <div class="logo"><img src="logoKiki.png"/></div>
-				  <div class="brand_title"><h1><strong >Kikiriya DevOps</strong></h1> <div><i>software development</i></div></div>
+				  <div class="logo"><img src="logoKiki.png" alt="logo kikiriya"/></div>
+				  <div class="brand_title"  aria-labelledby="hero-title" id="hero-title"><h1><strong >Kikiriya DevOps</strong></h1> <div><i>software development</i></div></div>
 				  
 			  </div>		  
 			  <div class="lang-toggle" role="tablist" aria-label="Cambiar idioma">
 					<!-- <small data-es style="color:var(--color_primary);font-size:13px">Sitios Minimalistas · <br>  Alta Performance</small> -->
 					<!-- <small data-en style="display:none; color:var(--color_primary);font-size:13px"> Minimalist Sities · <br>  hight Performance</small> -->
-					<button id="btn-es" class="active" aria-selected="true">ES</button>
-					<button id="btn-en" aria-selected="false">EN</button>
+					<button id="btn-es" class="active" aria-selected="true" role="tab">ES</button>
+					<button id="btn-en" aria-selected="false" role="tab">EN</button>
 			  </div>
-		  </div>
+		 </header>
 		<div class="description_site">
 			<h2 id="animated-title"></h2>
 			
@@ -541,9 +558,9 @@
 				<p data-en style="display:none">Clean code, careful aesthetics and fluid navigation.</p>
 			  </div>
 			</div>
-		  </div>
+		 </div>
 
-      <aside class="aside">
+      <section class="section_service">
         <div class="grid">
 			<div >
 			  <div data-es>
@@ -607,28 +624,27 @@
 				<p data-en style="display:none;margin:8px 0 0;color:var(--color_primary)">	We encourage fluid and flexible communication to ensure that your vision is translated into a website that drives both your growth and ours.</p>		  
 			  </div>		  
         </div>
-      </aside>
+      </section>
      </section>
-	
+	<aside>
         <div class="hero-foot" >
 			<div class="contact_wrap">				
 				  <h3>Contactar</h3>
-				  <div class="contact_my" >
-					<div><span>☎️ - </span> 
-						<a href="tel:+598094872605" class="" target="_blank" rel="noopener" aria-label="Contactar por telefono fijo">094872605</a>
+				  <address class="contact_my" >
+					<div><span aria-hidden="true">☎️ - </span> 
+						<a href="tel:+598094872605" class="" target="_blank" rel="noopener" aria-label="Contactar por telefono fijo" title="Contactar por telefono fijo">094872605</a>
 					</div>		
-					<div><span>🎯 - </span> Prado, Montevideo, Uruguay</div>
-					<div style="display:flex; flex-wrap:nowrap;"><span>📩 </span> -  kikiriyadevops@gmail.com</div>	
-					
-				  </div>    
+					<div><span aria-hidden="true">🎯 - </span> Prado, Montevideo, Uruguay</div>
+					<div style="display:flex; flex-wrap:nowrap;"><span aria-hidden="true">📩 </span> -  kikiriyadevops@gmail.com</div>						
+				  </address>    
 				
 			  </div > 
 		
 		</div>
 		
-		
+		</aside>
   </main>
-<a href="https://wa.me/598094872605?text=Hola%2C%20%20Kikiriya%20DevOp" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/598094872605?text=Hola%2C%20%20Kikiriya%20DevOp" class="whatsapp_float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" role="button">
 			📞
 		</a>
 			
@@ -637,13 +653,16 @@
 			© <span id="year"></span> Kikiriya DevOps — Todos los derechos reservados.
 		</div>
 		<div class="foot_theme">
-			<div><p>Última actualización: <span id="clock"></span>	</p></div>
-			<div>
-				<button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+			<div class=""><p>Última actualización: <span id="clock"></span>	</p></div>
+			<div  class="btns_config">
+				<button class="theme-toggle" id="themeToggle" aria-label="Cambiar detema" title="Cambiar de Tema">
 					<span id="themeIcon">🌙</span>				
 				</button>
+				
+				<a href="#main-content" class="skip_link_inicio" role="button" title="Al inicio">⬆️</a>
 			</div>
 		</div>
+		
   </footer>
 
   <script>
