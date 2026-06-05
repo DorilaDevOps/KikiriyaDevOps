@@ -64,7 +64,7 @@
     }
 	 [data-theme="dark"] {
 		 --bg_primary: #2b2828;
-		 --bg_secondary:;
+		 --bg_secondary:
 		 --color_primary:#d2dfde; 
 		 --color_secundary: #A9A9A9;
 		  --color_tertiary: #cfdcfb;
@@ -136,6 +136,7 @@
 		flex-direction: column;
 		gap: 1rem;
 		justify-content: space-around;
+		align-items: stretch;
 		background: var(--gradient-end);
 		padding: 0px;
 		border-radius: 12px;
@@ -198,12 +199,12 @@
 		flex-direction: column;
 		& h1{
 			font-size: clamp(1.3em, 6vw, 2.5em);
-			letter-spacing: 2px;
+			letter-spacing: 0px;
 		}
 	}
 	
 	.brand_title > div > i {
-		 font-size: clamp(1.3em, 3vw, 1.5em);
+		 font-size: clamp(1em, 3vw, 1.5em);
 		}
 	
     h1{margin:0;font-size:1.7em;}
@@ -311,9 +312,9 @@
 		display:grid;
 		grid-template-columns:1fr;
 		gap:1rem;
-		<!-- padding-left: 2em; -->
-		<!-- text-indent: -2em; -->
-		<!-- color:var(--color_tertiary); -->
+		 /* padding-left: 2em;  */
+		 /* text-indent: -2em;  */
+		/* color:var(--color_tertiary);  */
 	}
 	
 	.queIncluye > ul > li{
@@ -381,6 +382,8 @@
 		max-width: 50%;
 	}
 	
+	.foot_update{display:flex;}
+	
     #clock{font-weight:600;color:var(--accent)}
 	
         .whatsapp_float {
@@ -445,6 +448,7 @@
 		.brand{padding: 18px;}
 		.brand_title{
 			gap: 1rem; 
+			& h1{letter-spacing:.1rem;}
 		}
 		
 		
@@ -634,7 +638,7 @@
 					<div><span aria-hidden="true">☎️ - </span> 
 						<a href="tel:+598094872605" class="" target="_blank" rel="noopener" aria-label="Contactar por telefono fijo" title="Contactar por telefono fijo">094872605</a>
 					</div>		
-					<div><span aria-hidden="true">🎯 - </span> Prado, Montevideo, Uruguay</div>
+					<div><span aria-hidden="true">🎯 - </span> Capurro | Montevideo | Uruguay</div>
 					<div style="display:flex; flex-wrap:nowrap;"><span aria-hidden="true">📩 </span> -  kikiriyadevops@gmail.com</div>						
 				  </address>    
 				
@@ -653,7 +657,7 @@
 			© <span id="year"></span> Kikiriya DevOps — Todos los derechos reservados.
 		</div>
 		<div class="foot_theme">
-			<div class=""><p>Última actualización: <span id="clock"></span>	</p></div>
+			<div class="foot_update"><p>Última actualización:</br> <span id="clock"></span>	</p></div>
 			<div  class="btns_config">
 				<button class="theme-toggle" id="themeToggle" aria-label="Cambiar detema" title="Cambiar de Tema">
 					<span id="themeIcon">🌙</span>				
@@ -749,7 +753,7 @@
     function updateClock(){
       const now=new Date();
       const time = now.toLocaleTimeString('es-UY',{hour12:false});
-      clock.textContent = `${dia-2} / ${mes} - ${time}`;
+      clock.textContent = `${dia} / ${mes} - ${time}`;
     }
 	  
     setInterval(updateClock,1000);
