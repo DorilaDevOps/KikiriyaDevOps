@@ -11,25 +11,31 @@
     <meta name="geo.region" content="UY-MO">
     <meta name="geo.placename" content="Montevideo">
     <meta name="geo.position" content="-34.905034;-56.191170">
-	<link rel="shortcut icon" href="logoKiki-min.png" type="image/jpg">
+	<link rel="shortcut icon" href="logoKiki-min.png" type="image/png">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kikiriya DevOps |Desarrollo de Software y Diseño Web |Accesibilidad Usabilidad Posisionamiento| uy">
+    <meta property="og:title" content="Kikiriya DevOps | Desarrollo de Software y Diseño Web | Accesibilidad Usabilidad Posicionamiento | uy">
     <meta property="og:description" content="Servicios profesionales de desarrollo y diseño web de calidad, accesible y minimalista, modernos y optimizados para SEO.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_UY">
-	<meta property="og:url" content="https://kikiriya-software.netlify.app/">
-	<meta property="og:image" content="logoKiki-min.png">
+	<meta property="og:url" content="https://kikiriya-devops.netlify.app/">
+	<meta property="og:image" content="https://kikiriya-devops.netlify.app/logoKiki-min.png">
+	<link rel="canonical" href="https://kikiriya-devops.netlify.app/">
+	<link rel="alternate" hreflang="es" href="https://kikiriya-devops.netlify.app/">
+	<link rel="alternate" hreflang="en" href="https://kikiriya-devops.netlify.app/?lang=en">
     
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="logoKiki.png">
-    <meta name="twitter:title" content="Kikiriya DevOps | Desarrollo de Software y Diseño Web | Accesibilidad Usabilidad Posisionamiento| uy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kikiriya DevOps | Desarrollo de Software y Diseño Web | Accesibilidad Usabilidad Posicionamiento | uy">
     <meta name="twitter:description" content="Servicios profesionales de desarrollo y diseño web de calidad, accesible y minimalista, modernos y optimizados para SEO.">
-	<meta name="twitter:image" content="logoKiki-min.png">
+	<meta name="twitter:image" content="https://kikiriya-devops.netlify.app/logoKiki-min.png">
     
   
-  <title>Kikiriya DevOps |Desarrollo de Software y Diseño Web |Accesibilidad Usabilidad Posisionamiento</title>
-  	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Kikiriya DevOps | Desarrollo y Diseño Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn-uicons.flaticon.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   
@@ -64,7 +70,7 @@
     }
 	 [data-theme="dark"] {
 		 --bg_primary: #2b2828;
-		 --bg_secondary:
+		 --bg_secondary:#3a3a3a;
 		 --color_primary:#d2dfde; 
 		 --color_secundary: #A9A9A9;
 		  --color_tertiary: #cfdcfb;
@@ -96,9 +102,10 @@
 		max-width:var(--max-width);
 		margin:auto;
 		flex:1;
+		position:relative;
 		background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
 	}
-	main::brefore{
+	main::before{
 		content: '';
 		position: absolute;
 		top: 0;
@@ -146,6 +153,20 @@
 		transition: var(--transition);
 	}
 	
+		.skip-link{
+		position:absolute;
+		top:-100%;
+		left:1rem;
+		background:var(--accent);
+		color:#fff;
+		padding:.75rem 1.5rem;
+		border-radius:0 0 8px 8px;
+		z-index:100;
+		font-weight:600;
+		transition:top .2s ease;
+	}
+	.skip-link:focus{top:0;}
+
 	.brand::before{
 		content: '';
 		position: absolute;
@@ -156,7 +177,6 @@
 		animation: shimmer 1.3s infinite;
 		z-index:2;
 	}
-	<!-- .brand:hover::before{opacity:1;} -->
 		
 	.brand_logo{    
 		display: flex;
@@ -176,10 +196,6 @@
 		color:white;
 		height:70px;
 		border: 1px solid #666;
-		-webkit-transform: skew(-25deg);
-		-moz-transform: skew(-25deg);
-		-o-transform: skew(-25deg);
-		-ms-transform: skew(-25deg);
 		transform: skew(-25deg);
 		transition:all .4s ease-in-out;
 	}
@@ -230,7 +246,7 @@
 		bottom:10px;
 		width:0%;
 		height:3px;
-		background:var(--txt_hover);
+		background:var(--accent);
 		transition:all .3s ease;
 	}
 	
@@ -318,9 +334,6 @@
 	}
 	
 	.queIncluye > ul > li{
-		display:flex;
-		align-items: center;
-		gap:.5rem;
 		color:var(--color_primary);
 		padding-left: 0em;
 		text-indent: -2em;
@@ -441,8 +454,11 @@
 	}
 		
 		
+	.notas{margin-top:1em;}
+	.section_service{margin-top:2em;}
+
 	@media(min-width:790px){
-		brand_logo {
+		.brand_logo {
 		    gap: 2rem;
 		}
 		.brand{padding: 18px;}
@@ -496,9 +512,19 @@
 	    .whatsapp_float {
 			bottom: 30px;
 			right: 20px;
-			width: 120px;
-			height: 120px;
+			width: 70px;
+			height: 70px;
+			font-size:1.8rem;
 		}
+	}
+
+	@media(prefers-reduced-motion:reduce){
+		*,*::before,*::after{
+			animation-duration:0.01ms !important;
+			animation-iteration-count:1 !important;
+			transition-duration:0.01ms !important;
+		}
+		html{scroll-behavior:auto;}
 	}
 	
 	
@@ -513,6 +539,7 @@
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link" aria-label="Saltar al contenido principal">Saltar al contenido</a>
   <main class="main" id="main-content">
 	<section class="hero">
         <header class="brand">
@@ -521,11 +548,9 @@
 				  <div class="brand_title"  aria-labelledby="hero-title" id="hero-title"><h1><strong >Kikiriya DevOps</strong></h1> <div><i>software development</i></div></div>
 				  
 			  </div>		  
-			  <div class="lang-toggle" role="tablist" aria-label="Cambiar idioma">
-					<!-- <small data-es style="color:var(--color_primary);font-size:13px">Sitios Minimalistas · <br>  Alta Performance</small> -->
-					<!-- <small data-en style="display:none; color:var(--color_primary);font-size:13px"> Minimalist Sities · <br>  hight Performance</small> -->
-					<button id="btn-es" class="active" aria-selected="true" role="tab">ES</button>
-					<button id="btn-en" aria-selected="false" role="tab">EN</button>
+		<div class="lang-toggle" role="group" aria-label="Cambiar idioma">
+				<button id="btn-es" class="active" aria-pressed="true">ES</button>
+				<button id="btn-en" aria-pressed="false">EN</button>
 			  </div>
 		 </header>
 		<div class="description_site">
@@ -570,7 +595,7 @@
 			  <div data-es>
 					<strong>¿Por qué elegir este servicio?</strong>
 					<p style="margin:8px 0 0;color:var(--color_primary)">Comunicación fluida y transparente, con resultados visibles en poco tiempo.</p>
-					<p style="margin:8px 0 0;color:var(--color_primary)">Acompañamos cada proyecto con seguimiento, mejoras y ajustes continuos junto a vos.
+					<p style="margin:8px 0 0;color:var(--color_primary)">Acompañamos cada proyecto con seguimiento, mejoras y ajustes continuos junto a vos.</p>
 					<p style="margin:8px 0 0;color:var(--color_primary)">El objetivo: un sitio rentable, fácil de mantener y que comunique tu propuesta de valor con claridad.</p>
 					<p style="margin:8px 0 0;color:var(--color_primary)"><span style="font-weight:600">Presupuesto justo. </span>
 						El presupuesto inicial cubre un producto mejorado con ajustes posteriores según conveniencia del cliente.</p>
@@ -586,42 +611,69 @@
 			</div>
 		  
 			 <div class="queIncluye">
-				<div class="garantia">Garantía</div>
+
+				<div class="garantia" data-es>Garantía</div>
+				<div class="garantia" data-en style="display:none">Warranty</div>
+
 				<strong data-es>¿Qué incluye nuestro servicio?</strong>
 				<ul data-es >
-				  <li><em>Infraestructura:</em> </br>
-					  Un año de Hosting </br>
-					Registro Dominio
+				  <li>
+					<em>Infraestructura:</em> <br>
+					  Un año de Hosting <br>
+					  Registro Dominio
 				  </li>
-				  <li>Certificacion de Seguridad (SSL)</li>
-				  <li>Boton de WhatsApp </li>
-				  <li>Enlaces directos a Redes Sociales</li>
-				  <li>Sitio 100% personalizado</li>
-				  <li>Diseño minimalista UX y UX enfocado</li>
-				  <li>Optimización para posicionamiento y velocidad en buscadores (SEO)</li>
-				  <li>Entrega continua en el desarrollo y pruebas de funcionamiento (Agile software)</li>
-				  <li>Soporte tecnico garantizado</li>
+				  <li><em>Seguridad:</em><br>
+						 Certificado SSL incluido
+				  </li>
+				  <li><em>Conversión: </em><br>
+						Botón de WhatsApp <br>
+						Integracion directa con Redes Sociales
+				  </li>
+				  <li><em>Diseño:</em><br>
+						Sitio 100% personalizado <br>
+						Diseño minimalista UX/UI enfocado
+				  </li>
+				  <li><em>Rendimiento:</em><br>
+						Optimizado para posicionamiento SEO y velocidad en buscadores
+				  </li>
+				  <li><em>Metodología</em> <br>
+						Entrega continua en el desarrollo y pruebas de funcionamiento (Agile software) <br>
+						Soporte tecnico garantizado
+				  </li>
 				</ul>
 
-				<strong data-en style="display:none">What&apos;s included</strong>
+				<strong data-en style="display:none">What&apos;s our service include?</strong>
 				<ul data-en style="display:none;">				  
-					<li>One year Hosting</li>
-					<li>Web domain registration</li>
-					<li>Security Certification (SSL)</li>
-					<li>WhatsApp button</li>
-					<li>Direct links to Social Networks</li>
-					<li>100% personalized site</li>
-					<li>Minimalist UX design and focused UX</li>
-					<li>Optimization for positioning and speed in search engines (SEO)</li>
-					<li>Continuous delivery in development and operational testing (Agile software)</li>
-					<li>Guaranteed technical support</li>
+					<li>
+					<em>Infrastructure:</em> <br>
+					  One year of Hosting <br>
+					  Domain Registration
+				  </li>
+				  <li><em>Security:</em><br>
+						 SSL Certificate included
+				  </li>
+				  <li><em>Conversion: </em><br>
+						WhatsApp button <br>
+						Direct integration with Social Networks
+				  </li>
+				  <li><em>Design:</em><br>
+						100% personalized site <br>
+						Minimalist UX/UI design
+				  </li>
+				  <li><em>Performance:</em><br>
+						Optimized for SEO positioning and speed in search engines
+				  </li>
+				  <li><em>Methodology</em> <br>
+						Continuous delivery in development and operational testing (Agile software) <br>
+						Guaranteed technical support
+				  </li>
 				</ul>
 			  </div>
 			  
 			 <div class="notas">
 				<strong data-es>Notas</strong>
 				<p data-es style="margin:8px 0 0;color:var(--color_primary)">	Mantenimiento opcional. </p>
-				<p data-es style="margin:8px 0 0;color:var(--color_primary)">El cliente puede gestionar dominio y hosting. </p>
+				<p data-es style="margin:8px 0 0;color:var(--color_primary)">   El cliente puede gestionar dominio y hosting. </p>
 				<p data-es style="margin:8px 0 0;color:var(--color_primary)">	Fomentamos una comunicación fluida y flexible para asegurar que tu visión se traduzca en un sitio web que impulse tanto tu crecimiento como el nuestro.</p>
 
 				<strong data-en style="display:none">Notes</strong>
@@ -635,13 +687,14 @@
 	<aside>
         <div class="hero-foot" >
 			<div class="contact_wrap">				
-				  <h3>Contactar</h3>
+				  <h3 data-es>Contacto</h3>
+				  <h3 data-en style="display:none;">Contact</h3>
 				  <address class="contact_my" >
-					<div><span aria-hidden="true">☎️ - </span> 
-						<a href="tel:+598094872605" class="" target="_blank" rel="noopener" aria-label="Contactar por telefono fijo" title="Contactar por telefono fijo">094872605</a>
+					<div><span aria-hidden="true">☎️</span> - 
+						<a href="tel:+598094872605" target="_blank" rel="noopener" aria-label="Contactar por telefono fijo" title="Contactar por telefono fijo">094872605</a>
 					</div>		
-					<div><span aria-hidden="true">🎯 - </span> Capurro | Montevideo | Uruguay</div>
-					<div style="display:flex; flex-wrap:nowrap;"><span aria-hidden="true">📩 </span> -  kikiriyadevops@gmail.com</div>						
+					<div><span aria-hidden="true">🎯</span> - Capurro | Montevideo | Uruguay</div>
+					<div style="display:flex; flex-wrap:nowrap;"><span aria-hidden="true">📩</span> -  kikiriyadevops@gmail.com</div>						
 				  </address>    
 				
 			  </div > 
@@ -650,22 +703,24 @@
 		
 		</aside>
   </main>
-<a href="https://wa.me/598094872605?text=Hola%2C%20%20Kikiriya%20DevOp" class="whatsapp_float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" role="button">
-			📞
+<a href="https://wa.me/598094872605?text=Hola%2C%20Kikiriya%20DevOps" class="whatsapp_float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" role="button">
+			<span aria-hidden="true">📞</span>
 		</a>
 			
   <footer>
 		<div >
-			© <span id="year"></span> Kikiriya DevOps </br> Todos los derechos reservados.
+			© <span id="year"></span> Kikiriya DevOps <br> 
+			<span data-es>Todos los derechos reservados.</span>
+			<span data-en style="display:none">All rights reserved.</span>
 		</div>
 		<div class="foot_theme">
-			<div class="foot_update"><p>Vivo a las:</br> <span id="clock"></span>	</p></div>
+			<div class="foot_update"><p>Vivo a las:<br> <span id="clock"></span>	</p></div>
 			<div  class="btns_config">
-				<button class="theme-toggle" id="themeToggle" aria-label="Cambiar detema" title="Cambiar de Tema">
-					<span id="themeIcon">🌙</span>				
+				<button class="theme-toggle" id="themeToggle" aria-label="Cambiar de tema" title="Cambiar de Tema">
+					<span id="themeIcon" aria-hidden="true">🌙</span>				
 				</button>
 				
-				<a href="#main-content" class="skip_link_inicio" role="button" title="Al inicio">⬆️</a>
+				<a href="#main-content" class="skip_link_inicio" role="button" title="Al inicio" aria-label="Volver al inicio"><span aria-hidden="true">⬆️</span></a>
 			</div>
 		</div>
 		
@@ -679,136 +734,140 @@
     "SEO inteligente para crecer en la web."
   ];
   const phrasesEn = [
-    "Diseño web minimalista con propósito.",
-    "Accesibilidad y rendimiento en cada línea de código.",
-    "Experiencias digitales que inspiran confianza.",
-    "SEO inteligente para crecer en la web.",
-	
-	"Minimal design and UX focus.",
-     "Basic SEO and speed optimization.",
-     "Responsive delivery and testing."
+    "Minimal design and UX focus.",
+    "Basic SEO and speed optimization.",
+    "Responsive delivery and testing."
   ];
-    const btnES=document.getElementById('btn-es');
-    const btnEN=document.getElementById('btn-en');
-    const esEls=document.querySelectorAll('[data-es]');
-    const enEls=document.querySelectorAll('[data-en]');
-    function setLang(lang){
-      if(lang==='es'){
-        btnES.classList.add('active');
-		btnEN.classList.remove('active');
-        esEls.forEach(e=>e.style.display='');
-        enEls.forEach(e=>e.style.display='none');
-      }else{
-        btnEN.classList.add('active');
-		btnES.classList.remove('active');
-        enEls.forEach(e=>e.style.display='');
-        esEls.forEach(e=>e.style.display='none');
-      }
+
+  const btnES = document.getElementById('btn-es');
+  const btnEN = document.getElementById('btn-en');
+  const esEls = document.querySelectorAll('[data-es]');
+  const enEls = document.querySelectorAll('[data-en]');
+
+  function updateLangAria(lang) {
+    btnES.setAttribute('aria-pressed', lang === 'es');
+    btnEN.setAttribute('aria-pressed', lang === 'en');
+  }
+
+  function setLang(lang) {
+    if (lang === 'es') {
+      btnES.classList.add('active');
+      btnEN.classList.remove('active');
+      esEls.forEach(e => e.style.display = '');
+      enEls.forEach(e => e.style.display = 'none');
+    } else {
+      btnEN.classList.add('active');
+      btnES.classList.remove('active');
+      enEls.forEach(e => e.style.display = '');
+      esEls.forEach(e => e.style.display = 'none');
     }
-    btnES.addEventListener('click',()=>setLang('es'));
-    btnEN.addEventListener('click',()=>setLang('en'));
+    updateLangAria(lang);
+  }
 
-    // Animación de texto tipo máquina de escribir
-    const title=document.getElementById('animated-title');
-    const textsES=["Impulsá tu negocio con un sitio web profesional","Desarrollos modernos y eficientes","Tu presencia digital, potenciada"];
-    const textsEN=["Boost your business with a professional website","Modern and efficient development","Your digital presence, elevated"];
-    let textIndex=0, charIndex=0, currentLang='es';
+  // Typewriter
+  const title = document.getElementById('animated-title');
+  const textsES = ["Impulsá tu negocio con un sitio web profesional", "Desarrollos modernos y eficientes", "Tu presencia digital, potenciada"];
+  const textsEN = ["Boost your business with a professional website", "Modern and efficient development", "Your digital presence, elevated"];
+  let textIndex = 0, charIndex = 0, currentLang = 'es';
+  let typingTimer = null;
 
-    function typeEffect(){
-      const arr=currentLang==='es'?textsES:textsEN;
-      if(charIndex<arr[textIndex].length){
-        title.textContent+=arr[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeEffect,90);
-      }else{
-        setTimeout(()=>eraseEffect(),2000);
-      }
+  function typeEffect() {
+    const arr = currentLang === 'es' ? textsES : textsEN;
+    if (charIndex < arr[textIndex].length) {
+      title.textContent += arr[textIndex].charAt(charIndex);
+      charIndex++;
+      typingTimer = setTimeout(typeEffect, 90);
+    } else {
+      typingTimer = setTimeout(eraseEffect, 2000);
     }
+  }
 
-    function eraseEffect(){
-      if(charIndex>0){
-        title.textContent=title.textContent.slice(0,-1);
-        charIndex--;
-        setTimeout(eraseEffect,30);
-      }else{
-        textIndex=(textIndex+1)%((currentLang==='es')?textsES.length:textsEN.length);
-        setTimeout(typeEffect,600);
-      }
+  function eraseEffect() {
+    if (charIndex > 0) {
+      title.textContent = title.textContent.slice(0, -1);
+      charIndex--;
+      typingTimer = setTimeout(eraseEffect, 30);
+    } else {
+      textIndex = (textIndex + 1) % ((currentLang === 'es') ? textsES.length : textsEN.length);
+      typingTimer = setTimeout(typeEffect, 600);
     }
+  }
 
-    function startTyping(){title.textContent='';typeEffect();}
+  function startTyping() {
+    clearTimeout(typingTimer);
+    title.textContent = '';
+    charIndex = 0;
+    textIndex = 0;
+    typeEffect();
+  }
 
-    btnES.addEventListener('click',()=>{currentLang='es';startTyping();});
-    btnEN.addEventListener('click',()=>{currentLang='en';startTyping();});
-
+  function switchLang(lang) {
+    currentLang = lang;
+    setLang(lang);
     startTyping();
+  }
 
-    // Footer clock
-    const clock=document.getElementById('clock');
-    const year=document.getElementById('year');
-	const hoy = new Date();
-	const dia = hoy.getDate(); // Día del mes (1-31)
-	const mes = hoy.getMonth() + 1; // Mes (0-11, sumamos 1)
-	const año = hoy.getFullYear(); 
-    year.textContent = año;
-	  
-    function updateClock(){
-      const now=new Date();
-      const time = now.toLocaleTimeString('es-UY',{hour12:false});
-      clock.textContent = `${dia} / ${mes} - ${time}`;
+  btnES.addEventListener('click', () => switchLang('es'));
+  btnEN.addEventListener('click', () => switchLang('en'));
+
+  startTyping();
+
+  // Footer clock
+  const clock = document.getElementById('clock');
+  const year = document.getElementById('year');
+  const hoy = new Date();
+  const dia = hoy.getDate();
+  const mes = hoy.getMonth() + 1;
+  const año = hoy.getFullYear();
+  year.textContent = año;
+
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('es-UY', { hour12: false });
+    clock.textContent = dia + ' / ' + mes + ' - ' + time;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Theme
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  function updateThemeIcon(theme) {
+    document.getElementById('themeIcon').textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+    updateThemeIcon(theme);
+  }
+
+  function initTheme() {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved) {
+      applyTheme(saved);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
     }
-	  
-    setInterval(updateClock,1000);
-	  
-    updateClock();
-	
-	document.addEventListener('DOMContentLoaded', () => {
-		initTheme();
-		 // Inicialización con lazy loading optimizado, Ajustar altura del aside según el viewport
-	 });
-	 
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-		const html = document.documentElement;
+  }
 
-        themeToggle.addEventListener('click', () => {
-            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', theme);			
-            localStorage.setItem('theme', theme);
-			updateThemeIcon(theme);
-        });
-function updateThemeIcon(theme) {
-		const themeIcon = document.getElementById('themeIcon');
-            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-      }
-  function aplicarTema(datoTema){
-	const html = document.documentElement;
-   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	 localStorage.setItem('theme', 'dark');
-		html.setAttribute('data-theme', 'dark');
-		updateThemeIcon(datoTema);
-   }
-   else{
-		localStorage.setItem('theme', 'light');
-		html.setAttribute('data-theme', 'light');
-		updateThemeIcon('light');}
+  themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      try { if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light'); } catch (err) {}
+    });
   }
-  function devolverThemaGuardado(){
-	//al iniciar operador ternario  verifica si hay tema guardado dark, y sera true y devuelve dark si no false y devuelva light
-	const savedTheme = localStorage.getItem('theme') ||
-            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-	return savedTheme;
-  }
-  
- function initTheme(){
-	 const theme_salved = devolverThemaGuardado();
-	 aplicarTema(theme_salved);
- }
- 
- // Detectar cambios en el tema del sistema a dark
- window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {  
-	aplicarTema('dark');
-   }); 
+
+  initTheme();
   </script>
 </body>
 </html>
